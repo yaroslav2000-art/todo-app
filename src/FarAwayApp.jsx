@@ -18,6 +18,7 @@ function FarAwayApp() {
         quantity: quantity,
         title: newTitle,
         packed: false,
+        createdDate: Date.now(),
       },
     ]);
   }
@@ -30,6 +31,30 @@ function FarAwayApp() {
   function handleDeleteItem(id) {
     setItemList((items) => items.filter((i) => i.id !== id));
   }
+
+  // function handleSort(sortBy) {
+  //   let copy = [...itemList];
+
+  //   switch (sortBy) {
+  //     case "Input Order":
+  //       copy.sort((a, b) => a.createdDate - b.createdDate);
+  //       break;
+
+  //     case "Description":
+  //       copy.sort((a, b) => a.title.localeCompare(b.title));
+  //       break;
+
+  //     case "Packed Status":
+  //       copy.sort((a, b) => b.packed - a.packed);
+  //       break;
+
+  //     default:
+  //       copy;
+  //   }
+
+  //   setItemList(copy);
+  // }
+
   return (
     <div style={{ display: "grid", height: "100vh", alignItems: "center" }}>
       <HeaderSection />
