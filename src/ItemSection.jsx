@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Item from "./Item";
-export default function ItemSection({ itemList, onPack, onDelete }) {
+export default function ItemSection({ itemList, onPack, onDelete, onClear }) {
   const [sortBy, setSortBy] = useState("Input Order");
 
   let sortedItems;
@@ -30,7 +30,7 @@ export default function ItemSection({ itemList, onPack, onDelete }) {
           <option value="Description">Sort by description</option>
           <option value="Packed Status">Sort by packed status</option>
         </select>
-        <button>Clear list</button>
+        <button onClick={() => onClear()}>Clear list</button>
       </div>
     </div>
   );

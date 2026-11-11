@@ -28,8 +28,13 @@ function FarAwayApp() {
       items.map((i) => (i.id === id ? { ...i, packed: !i.packed } : i)),
     );
   }
+
   function handleDeleteItem(id) {
     setItemList((items) => items.filter((i) => i.id !== id));
+  }
+
+  function handleClearList() {
+    setItemList([]);
   }
 
   // function handleSort(sortBy) {
@@ -63,8 +68,9 @@ function FarAwayApp() {
         itemList={itemList}
         onPack={handlePackItem}
         onDelete={handleDeleteItem}
+        onClear={handleClearList}
       />
-      <ResultSection />
+      <ResultSection itemList={itemList} />
     </div>
   );
 }
